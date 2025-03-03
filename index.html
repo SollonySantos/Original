@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Landing page</title>
+
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-burger" id="nav_logo"> Guía completa</i>
+
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Sé contratado</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Pasé por lo mismo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Reseñas</a>
+                </li>
+            </ul>
+
+            <button class="btn-default btn-with-animation" onclick="abrirCheckout()">
+                ¡Pide aquí!
+            </button>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Sé contratado</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Pasé por lo mismo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Reseñas</a>
+                </li>
+            </ul>
+
+            <button class="btn-default btn-with-animation">
+                ¡Pide aquí!
+            </button>
+        </div>
+    </header>
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                    El método que garantiza tu 
+                    <span  style="color: #62A29A;">contratación.</span>
+                
+                  
+                      
+                </h1>
+
+                <p class="description">
+                    Descubre las estrategias que ya han transformado a cientos de candidatos en profesionales contratados, con técnicas comprobadas para destacarte y conquistar el trabajo de tus sueños.
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#" class="btn-default btn-with-animation" onclick="abrirCheckout()">
+                        Adquiérelo ya
+                    </a>
+
+                    <a href="tel:+11959818198" id="phone_button">
+                        <button id="phone-button" class="btn-default" data-no-animation="true">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        (11) 95981-8198
+                    </a>
+                </div>
+
+                <div class="social-media-buttons">
+                    <a href="https;//wa.me/5511959818198">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/el.krasovski/">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/sollony.santos.716/?viewas=100000686899395">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="banner">
+                <img src="src/images/B (1).png" alt="">
+            </div>
+        </section>
+
+       <!-- Seção das Caixas -->
+<section id="menu">
+    <h2 class="section-title">Ya estuve ahí. Te enseño a conquistar el trabajo de tus sueños. ¿Vamos?</h2>
+    <div id="dishes">
+        <!-- Caixa 1 -->
+        <div class="dish">
+            <div class="dish-heart">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <img src="src/images/salvada.jpeg" class="dish-image" alt="LinkedIn">
+            <h3 class="dish-title">De Invisível a Destaque no LinkedIn</h3>
+            <p class="dish-description">Você já se perguntou por que ninguém responde suas mensagens no LinkedIn? Eu também já me senti assim. Até descobrir o segredo para transformar meu perfil em uma máquina de oportunidades. Em 30 dias, fui de 0 a 5 entrevistas. Aprenda a se destacar e atrair recrutadores como um ímã.</p>
+        </div>
+        <!-- Caixa 2 -->
+        <div class="dish">
+            <div class="dish-heart">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <img src="src/images/salvada 3.jpeg" class="dish-image" alt="Currículo">
+            <h3 class="dish-title">Currículo que Abre Portas</h3>
+            <p class="dish-description">Quantos currículos você já enviou sem resposta? Eu já perdi as contas. Até entender que um currículo não é só uma lista de experiências, mas uma história que precisa encantar. Em 2 semanas, consegui 3 convites para entrevistas. Descubra como criar um currículo que conta sua trajetória de forma cativante.</p>
+        </div>
+        <!-- Caixa 3 -->
+        <div class="dish">
+            <div class="dish-heart">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <img src="src/images/salvada 2.jpeg" class="dish-image" alt="Habilidades Comportamentais">
+            <h3 class="dish-title">Domine as Habilidades que Ninguém Ensina</h3>
+            <p class="dish-description">Sabia que 85% das contratações dependem das suas habilidades comportamentais? Eu aprendi isso da maneira mais difícil, após várias entrevistas frustradas. Em 1 mês, fui aprovado em 2 processos seletivos. Aprenda a se comunicar com confiança e lidar com situações de pressão.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="sobre-mim">
+    <div class="container">
+        <div class="sobre-mim-content">
+            <!-- Imagem -->
+            <div class="sobre-mim-image">
+                <img src="src/images/1741027419754.jpg" alt="Sollony Krasovski - Especialista em Recrutamento e Seleção">
+            </div>
+
+            <!-- Texto -->
+            <div class="sobre-mim-text">
+                <h2 class="sobre-mim-title">Sobre Mim</h2>
+                <h3 class="sobre-mim-subtitle">Sollony Krasovski - Especialista em Recrutamento e Seleção</h3>
+                <p class="sobre-mim-description">
+                    Com mais de 3 anos de experiência em Recursos Humanos, já ajudei centenas de pessoas a superarem o desemprego e conquistarem o trabalho dos seus sonhos. Entendo profundamente as dificuldades que você enfrenta, pois já estive no seu lugar. Meu método foi criado para guiar você, passo a passo, desde a preparação do currículo até a conquista da vaga desejada.
+                </p>
+                <p class="sobre-mim-description">
+                    Minha abordagem combina técnicas comprovadas, insights psicológicos e estratégias práticas para garantir que você se destaque no mercado de trabalho. Se você está pronto para transformar sua carreira, eu estou aqui para te guiar nessa jornada.
+                </p>
+                <a href="#" class="btn-default btn-with-animation" onclick="abrirCheckout()">
+                    Quero Transformar Minha Vida
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formas Geométricas -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+</section>
+        <section id="testimonials">
+            <img src="src/images/PASSE AGORA (540 x 540 px) (3).png" id="testimonial_chef" alt="">
+
+            <div id="testimonials_content">
+                <h2 class="section-title">
+                    Testimonios
+                </h2>
+                <h3 class="section-subtitle">
+                    Lo que los clientes dicen sobre nosotros.
+                </h3>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content">
+                            <p>
+                                Santiago Gutiérrez
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Nunca pensé que un material pudiera ser tan revelador, che. Seguí los pasos y hoy estoy trabajando en la empresa de mis sueños. ¡Vale cada peso!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content">
+                            <p>
+                                Andrea González
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "¡Este ebook cambió mi vida, loco! Las técnicas son tan prácticas que conseguí mi primera entrevista en menos de una semana. ¡Se lo recomiendo a todos los que buscan un cambio!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="ver-mas-resenas" class="btn-default" data-no-animation="true">
+                    Ver más reseñas
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Sollony Krasovski
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="https;//wa.me/5511959818198">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/el.krasovski/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/sollony.santos.716/?viewas=100000686899395">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="src/javascript/script.js"></script>
+
+    <script>
+        // Configuração do Mercado Pago
+        const mp = new MercadoPago('SUA_PUBLIC_KEY', {
+          locale: 'pt-BR' // Configuração para o Brasil
+        });
+      
+        // Função para abrir o checkout
+        function abrirCheckout() {
+          mp.checkout({
+            preference: {
+              id: 'SEU_PREFERENCE_ID' // ID da preferência de pagamento
+            },
+            autoOpen: true // Abre o pop-up automaticamente
+          });
+        }
+      </script>
+
+</body>
+</html>
