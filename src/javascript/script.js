@@ -60,31 +60,83 @@ $(document).ready(function() {
 });
 
 
-app.post('/processar-pagamento', async (req, res) => {
-    const { nome, email, cpf, metodoPagamento, token } = req.body;
+// Abrir o pop-up ao clicar nos botões
+document.getElementById('open-popup-1').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'flex';
+});
+
+document.getElementById('open-popup-2').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'flex';
+});
+
+// Fechar o pop-up ao clicar no "X"
+document.getElementById('close-popup').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'none';
+});
+
+// Fechar o pop-up ao clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === document.getElementById('checkout-popup')) {
+        document.getElementById('checkout-popup').style.display = 'none';
+    }
+});
+
+const response = await fetch('/create_preference', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        cardholderName,
+        installments,
+    }),
+});
+
+// Abrir o pop-up ao clicar nos botões
+document.getElementById('open-popup-1').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'flex';
+});
+
+document.getElementById('open-popup-2').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'flex';
+});
+
+// Fechar o pop-up ao clicar no "X"
+document.getElementById('close-popup').addEventListener('click', () => {
+    document.getElementById('checkout-popup').style.display = 'none';
+});
+
+// Fechar o pop-up ao clicar fora dele
+window.addEventListener('click', (event) => {
+    if (event.target === document.getElementById('checkout-popup')) {
+        document.getElementById('checkout-popup').style.display = 'none';
+    }
+});
+
+const form = document.getElementById('payment-form');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const product = {
+        title: 'Ebook Incrível', // Nome do produto
+        price: 50.00,           // Preço do produto
+        quantity: 1,            // Quantidade
+    };
 
     try {
-        // Cria o pagamento
-        const paymentData = {
-            transaction_amount: 100.00, // Valor em reais
-            token,
-            description: 'Compra do E-book Incrível',
-            installments: metodoPagamento === 'cartao' ? 1 : 1, // Número de parcelas
-            payment_method_id: metodoPagamento === 'cartao' ? 'visa' : metodoPagamento,
-            payer: {
-                email,
-                identification: {
-                    type: 'CPF',
-                    number: cpf,
-                },
+        const response = await fetch('http://localhost:3000/create_preference', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-        };
+            body: JSON.stringify(product),
+        });
 
-        // Envia a requisição ao Mercado Pago
-        const response = await mercadopago.payment.create(paymentData);
-        res.json({ sucesso: true, status: response.body.status });
+        const { id } = await response.json();
+        window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?preference_id=${id}`;
     } catch (error) {
-        console.error('Erro no pagamento:', error);
-        res.json({ sucesso: false });
+        console.error(error);
+        alert('Erro ao processar o pagamento');
     }
 });

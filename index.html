@@ -155,13 +155,13 @@
                 <h2 class="sobre-mim-title">Sobre Mim</h2>
                 <h3 class="sobre-mim-subtitle">Sollony Krasovski - Especialista em Recrutamento e Seleção</h3>
                 <p class="sobre-mim-description">
-                    Com mais de 3 anos de experiência em Recursos Humanos, já ajudei centenas de pessoas a superarem o desemprego e conquistarem o trabalho dos seus sonhos. Entendo profundamente as dificuldades que você enfrenta, pois já estive no seu lugar. Meu método foi criado para guiar você, passo a passo, desde a preparação do currículo até a conquista da vaga desejada.
+                    Com mais de [X anos] de experiência em [sua área], já ajudei centenas de pessoas a superarem o desemprego e conquistarem o trabalho dos seus sonhos. Entendo profundamente as dificuldades que você enfrenta, pois já estive no seu lugar. Meu método foi criado para guiar você, passo a passo, desde a preparação do currículo até a conquista da vaga desejada.
                 </p>
                 <p class="sobre-mim-description">
                     Minha abordagem combina técnicas comprovadas, insights psicológicos e estratégias práticas para garantir que você se destaque no mercado de trabalho. Se você está pronto para transformar sua carreira, eu estou aqui para te guiar nessa jornada.
                 </p>
                 <a href="#" class="btn-default btn-with-animation" onclick="abrirCheckout()">
-                    Quero Transformar Minha Vida
+                    Quero Transformar Minha Carreira
                 </a>
             </div>
         </div>
@@ -258,22 +258,61 @@
     </footer>
     <script src="src/javascript/script.js"></script>
 
-    <script>
-        // Configuração do Mercado Pago
-        const mp = new MercadoPago('SUA_PUBLIC_KEY', {
-          locale: 'pt-BR' // Configuração para o Brasil
-        });
-      
-        // Função para abrir o checkout
-        function abrirCheckout() {
-          mp.checkout({
-            preference: {
-              id: 'SEU_PREFERENCE_ID' // ID da preferência de pagamento
-            },
-            autoOpen: true // Abre o pop-up automaticamente
-          });
-        }
-      </script>
+ <!-- Pop-up de Checkout -->
+<div id="checkout-popup" class="popup">
+    <div class="popup-content">
+        <!-- Botão para fechar o pop-up -->
+        <span id="close-popup" class="close-popup">&times;</span>
 
+        <!-- Título do Pop-up -->
+        <h1>Finalize sua Compra</h1>
+
+        <!-- Mensagem de destaque para aumentar a conversão -->
+        <p class="highlight-message">¡97% de los clientes aprovechan esta oportunidad!</p>
+
+        <!-- Informações do Produto -->
+        <div class="product-info">
+            <h2>Ebook Incrível</h2>
+            <p class="price">R$ 50,00</p>
+            <p class="benefits">✔ Acceso inmediato después de la compra</p>
+            <p class="benefits">✔ Garantía de satisfacción de 7 días</p>
+        </div>
+
+        <!-- Formulário de Pagamento -->
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="cardNumber">Número de Tarjeta</label>
+                <div id="cardNumber" class="input-field"></div>
+            </div>
+            <div class="form-group">
+                <label for="expirationDate">Fecha de Vencimiento</label>
+                <div id="expirationDate" class="input-field"></div>
+            </div>
+            <div class="form-group">
+                <label for="securityCode">Código de Seguridad</label>
+                <div id="securityCode" class="input-field"></div>
+            </div>
+            <div class="form-group">
+                <label for="cardholderName">Nombre en la Tarjeta</label>
+                <input type="text" id="cardholderName" class="input-field" placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label for="installments">Parcelas</label>
+                <select id="installments" class="input-field">
+                    <option value="1">1x de R$ 50,00</option>
+                    <option value="2">2x de R$ 25,00</option>
+                    <option value="3">3x de R$ 16,67</option>
+                </select>
+            </div>
+            <button type="submit" class="cta-button">Finalizar Compra Ahora</button>
+        </form>
+
+        <!-- Informações de Segurança -->
+        <div class="security-info">
+            <p>✔ Pago seguro</p>
+            <p>✔ Datos encriptados</p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

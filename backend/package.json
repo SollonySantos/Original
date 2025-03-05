@@ -1,0 +1,25 @@
+{
+  "name": "landing-page-food-theme-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SollonySantos/Original.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SollonySantos/Original/issues"
+  },
+  "homepage": "https://github.com/SollonySantos/Original#readme",
+  "description": "Este projeto é uma landing page com integração ao Mercado Pago para um checkout transparente e seguro.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mercadopago": "^2.3.0"
+  }
+}
