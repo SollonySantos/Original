@@ -1,0 +1,148 @@
+#testimonials {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: linear-gradient(45deg, #f9fafb, #e8f0fe);
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonial_chef {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#testimonial_chef:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+#testimonials .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #202124;
+    margin-bottom: 10px;
+}
+
+#testimonials .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #1a73e8;
+    margin: 10px 0 20px;
+    border-radius: 2px;
+}
+
+#testimonials .section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #5f6368;
+    margin-bottom: 30px;
+}
+
+.feedback {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.feedback:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    background-color: #f1f3f4;
+}
+
+.feedback-content p:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #202124;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-content p:first-child span {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+#ver-mas-resenas {
+    background-color: #1a73e8;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#ver-mas-resenas:hover {
+    background-color: #34a853;
+    transform: translateY(-3px);
+}
+
+.shape {
+    position: absolute;
+    background-color: rgba(26, 115, 232, 0.1);
+    z-index: 1;
+}
+
+.shape-1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: -30px;
+    left: -30px;
+    animation: float 6s infinite ease-in-out;
+}
+
+.shape-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    bottom: -30px;
+    right: -30px;
+    animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+    #testimonials {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #testimonial_chef {
+        max-width: 250px;
+    }
+
+    .shape-1, .shape-2 {
+        display: none;
+    }
+}
