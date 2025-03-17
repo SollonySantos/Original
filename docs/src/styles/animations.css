@@ -1,0 +1,98 @@
+/* Animação das Letras do LinkedIn */
+@keyframes floatLetters {
+    0%, 100% { 
+        transform: translateY(0) rotateY(0) scale(1); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: translateY(-20px) rotateY(20deg) scale(1.1); 
+        opacity: 0.8; 
+    }
+}
+
+.linkedin-gravura .letter {
+    animation: floatLetters 5s infinite ease-in-out;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Animação dos Raios de Sol */
+@keyframes sunRays {
+    0% { 
+        transform: rotate(0deg) scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: rotate(180deg) scale(1.2); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: rotate(360deg) scale(1); 
+        opacity: 0.8; 
+    }
+}
+
+.sun-rays {
+    animation: sunRays 10s infinite linear;
+    transform-origin: center;
+}
+
+/* Animação de Reflexões de Água */
+@keyframes waterReflection {
+    0%, 100% { 
+        transform: translateY(0) scaleX(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateY(-10px) scaleX(1.1); 
+        opacity: 1; 
+    }
+}
+
+.water-reflection {
+    animation: waterReflection 5s infinite ease-in-out;
+}
+
+/* Animação de Brilho Cinematográfico (Lens Flare) */
+@keyframes lensFlare {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.2); 
+        opacity: 1; 
+    }
+}
+
+.lens-flare {
+    animation: lensFlare 5s infinite ease-in-out;
+}
+
+/* Animação de Flutuação do Livro */
+@keyframes floatBook {
+    0%, 100% { 
+        transform: translateY(0) rotateY(-15deg); 
+    }
+    50% { 
+        transform: translateY(-10px) rotateY(-20deg); 
+    }
+}
+
+.book-3d {
+    animation: floatBook 3s infinite ease-in-out;
+}
+
+/* Animação de Rotação do Livro ao Abrir */
+@keyframes openBook {
+    0% { 
+        transform: rotateY(-15deg); 
+    }
+    100% { 
+        transform: rotateY(180deg); 
+    }
+}
+
+.book-3d.open {
+    animation: openBook 1s ease-in-out forwards;
+}

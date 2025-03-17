@@ -1,0 +1,80 @@
+/* Container das partículas */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Gradiente moderno */
+    z-index: -1; /* Garante que fique atrás de outros elementos */
+    overflow: hidden;
+}
+
+/* Efeito de brilho sutil */
+#particles-js::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%); /* Brilho radial */
+    animation: rotateGlow 20s linear infinite; /* Animação de rotação */
+    z-index: 0;
+}
+
+/* Animação de rotação para o brilho */
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilo das partículas */
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Efeito de profundidade com sombras */
+.particles-js-canvas-el::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.5) 100%); /* Sombra radial */
+    z-index: 2;
+}
+
+/* Efeito de partículas brilhantes */
+.particles-js-canvas-el canvas {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) /* Brilho sutil nas partículas */
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+}
+
+/* Efeito de pulsação no fundo */
+@keyframes pulseBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Aplicando a pulsação ao fundo */
+#particles-js {
+    background-size: 200% 200%; /* Tamanho do gradiente */
+    animation: pulseBackground 10s ease infinite; /* Animação de pulsação */
+}

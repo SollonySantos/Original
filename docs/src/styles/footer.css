@@ -1,0 +1,107 @@
+/* Estilos Gerais do Footer */
+footer {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1); /* Gradiente azul */
+    color: #ffffff; /* Texto branco */
+    padding: 40px 0 10px 0; /* Padding menor */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.footer-wave {
+    width: 100%;
+    height: 80px; /* Altura reduzida */
+    position: absolute;
+    top: -1px; /* Ajuste para alinhar a onda */
+    left: 0;
+    z-index: 1;
+}
+
+#footer_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+#copyright {
+    font-family: 'Merriweather', serif;
+    font-size: 0.8rem; /* Texto menor */
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9); /* Texto semi-transparente */
+}
+
+/* Botões de Redes Sociais */
+.social-media-buttons {
+    display: flex;
+    gap: 15px; /* Espaçamento menor */
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    width: 40px; /* Tamanho menor */
+    height: 40px; /* Tamanho menor */
+    border-radius: 50%; /* Formato circular */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem; /* Tamanho dos ícones menor */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de levitação */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+}
+
+/* Mensagem de Chamada para Ação */
+#footer_cta {
+    margin-top: 20px; /* Margem menor */
+    padding: 15px 0; /* Padding menor */
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo semi-transparente */
+    position: relative;
+    z-index: 2;
+}
+
+#footer_cta p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* Texto menor */
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+}
+
+#footer_cta a {
+    color: #ffc107; /* Cor de destaque para o link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#footer_cta a:hover {
+    color: #ffffff; /* Cor ao passar o mouse */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    #footer_items {
+        flex-direction: column;
+        gap: 15px; /* Espaçamento menor */
+    }
+
+    .social-media-buttons {
+        gap: 10px; /* Espaçamento menor em dispositivos móveis */
+    }
+
+    #footer_cta p {
+        font-size: 0.9rem; /* Texto menor */
+    }
+}
